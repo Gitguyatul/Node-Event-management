@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const eventController = require("../Node-Event-Management-System/controllers/eventController");
+const eventController = require("../controllers/eventController");
 const adminAuth = require("../middleware/adminMiddleware");
 
 // Admin Routes

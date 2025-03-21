@@ -1,11 +1,11 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../../models/userModel");
+const User = require("../models/userModel");
 const nodemailer = require("nodemailer");
 const {
   signupSchema,
   loginSchema,
-} = require("../../validators/authValidators");
+} = require("../validators/authValidators");
 
 // ✅ Signup controller
 exports.signup = async (req, res) => {
