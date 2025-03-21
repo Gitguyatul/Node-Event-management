@@ -4,7 +4,6 @@ const User = require("../models/userModel");
 const nodemailer = require("nodemailer");
 const { signupSchema, loginSchema } = require("../validators/authValidators");
 
-
 // ✅ Signup controller
 exports.signup = async (req, res) => {
   const { error } = signupSchema.validate(req.body);
