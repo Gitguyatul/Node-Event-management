@@ -5,7 +5,6 @@ const authRoutes = require("./routes/authRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const errorMiddleware = require("./middleware/errorMiddleware");
 
-
 dotenv.config();
 
 const app = express();
@@ -14,8 +13,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use(errorMiddleware);
 
-
-mongoose.connect(process.env.MONGO_URI)
+mongoose
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
