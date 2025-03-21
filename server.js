@@ -7,11 +7,14 @@ const errorMiddleware = require("./middleware/errorMiddleware");
 
 dotenv.config();
 
+// express configeration
 const app = express();
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use(errorMiddleware);
+
+
 
 mongoose
   .connect(process.env.MONGO_URI)

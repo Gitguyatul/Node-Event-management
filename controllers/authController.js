@@ -60,7 +60,7 @@ exports.forgotPassword = async (req, res) => {
     if (!user) return res.status(404).json({ error: "User not found" });
 
     const resetToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "2h",
     });
 
     const transporter = nodemailer.createTransport({
