@@ -5,7 +5,8 @@ const eventSchema = new mongoose.Schema({
   description: { type: String, required: true },
   location: { type: String, required: true },
   status: { type: String, enum: ["active", "inactive"], default: "active" },
-  date: { type: Date, required: true },   
+  date: { type: Date, required: true }, 
+  createdAt: {type:Date, default:Date.now},  
 });
 
 module.exports = mongoose.model("Event", eventSchema);

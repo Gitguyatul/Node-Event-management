@@ -4,14 +4,15 @@ const dotenv = require("dotenv");
 const authRoutes = require("./routes/authRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const errorMiddleware = require("./middleware/errorMiddleware");
-
+const userRoutes = require('./routes/userRoutes');
 dotenv.config();
-
+ 
 // express configeration
 const app = express();
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
+app.use('/api/user', userRoutes);
 app.use(errorMiddleware);
 
 
